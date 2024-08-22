@@ -34,7 +34,7 @@ export async function PATCH(request: NextRequest, {params}: { params: { id: stri
     data: {
       name: body.name,
       description: body.description,
-      dueDate: body.dueDate,
+      dueDate: new Date(body.dueDate),
       category: body.category
     }
   })

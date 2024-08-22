@@ -10,7 +10,7 @@ interface TaskForm {
   name: string,
   description: string,
   dueDate: string,
-  category?: string
+  category?: string,
 }
 
 const NewTaskPage = () => {

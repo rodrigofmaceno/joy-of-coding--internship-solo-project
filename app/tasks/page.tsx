@@ -8,16 +8,11 @@ const TasksPage = async () => {
   return (
     <>
       <div className="flex py-3 space-x-3 justify-center">
-        <Button size="3" >
-          <Link href="/tasks/new"> Create Task</Link>
-        </Button>
-        <Button size="3" color="red">
-          <Link href="/tasks/delete"> Delete Task</Link>
-        </Button>
-        <Button  size="3" color="green">
-          <Link href="/tasks/update"> Edit Task</Link>
-        </Button>
+      <Button size="3" >
+        <Link href="/tasks/new"> Create a Task</Link>
+      </Button>
       </div>
+
       <div className="flex flex-wrap justify-center">
 
         <Flex gap="5" wrap="wrap" justify="center">
