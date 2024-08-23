@@ -18,9 +18,16 @@ const config: Config = {
             '0%': { opacity: '0' },
           '100%': { opacity: '1'},
         },
+        'side-to-side': {
+  
+          '33%': {transform: 'translateX(4px)'},
+          '100%': {transform: '-translateX(4px)'},
+          
+        },
       },
       animation: {
         'fade-in': 'fade-in ease-in 2s',
+        'side-to-side': 'side-to-side ease-in-out 2s infinite'
       },
     },
   },
