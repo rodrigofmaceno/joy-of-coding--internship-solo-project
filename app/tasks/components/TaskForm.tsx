@@ -6,8 +6,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { notFound, useRouter } from "next/navigation";
 import { Task } from "@prisma/client";
-import { createTaskSchema } from "@/app/createTaskSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { createTaskSchema } from "@/app/createTaskSchema";
 
 interface TaskFormData {
   name: string,

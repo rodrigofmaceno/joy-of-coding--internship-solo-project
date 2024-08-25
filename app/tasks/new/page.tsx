@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Text, TextArea, TextField } from "@radix-ui/themes";
+import { Button, TextArea, TextField, Text } from "@radix-ui/themes";
 import React from "react";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
