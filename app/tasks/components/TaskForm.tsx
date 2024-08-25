@@ -39,7 +39,7 @@ const TaskForm = ({task}: {task?: Task}) => {
       {errors.name && <Text color="red">{errors.name.message}</Text>}
       <TextArea className="h-60 w-full" defaultValue={task?.description} placeholder="Description" {...register('description')}/>
       {errors.description && <Text color="red">{errors.description.message}</Text>}
-      <TextField.Root defaultValue={task?.dueDate} placeholder="Enter date as MM/DD/YYYY" {...register('dueDate')}></TextField.Root>
+      <TextField.Root defaultValue={task?.dueDate} placeholder="Enter date as MM-DD-YYYY" {...register('dueDate')}></TextField.Root>
       {errors.dueDate && <Text color="red">{errors.dueDate.message}</Text>}
       {task.category ? <TextField.Root defaultValue={task?.category} placeholder="Category" {...register('category')}></TextField.Root> : <TextField.Root placeholder="Category" {...register('category')}></TextField.Root>}
       {errors.category && <Text color="red">{errors.category.message}</Text>}
