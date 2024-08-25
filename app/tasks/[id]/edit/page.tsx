@@ -15,15 +15,14 @@ const EditTaskPage = async ({params} : Props) => {
     
   });
 
-  // console.log(task)
 
   if(!task)
     notFound();
 
   return (
-    // <div className="flex justify-center">
+
       <TaskForm task= {task}/>
-    // </div>
+
     
   );
 };

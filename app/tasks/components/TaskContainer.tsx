@@ -10,13 +10,16 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 interface Props {
     tasks: Task[],
+    categories: any[],
 }
 
-const TaskContainer = ({tasks}: Props) => {
+const TaskContainer = ({tasks, categories}: Props) => {
+    
     const [filteredTasks, setFilteredTasks] = useState(tasks);
-    const filterTasks = (category: string) => {
+    
+    const filterTasks = (category: string | null) => {
         const taskArr: Task[] = [];
-        tasks.map((item) => { if(item.category === category) {console.log("yes");taskArr.push(item)}});
+        tasks.map((item) => { if(item.category === category) {taskArr.push(item)}});
         setFilteredTasks(taskArr);
       }
 
@@ -35,28 +38,31 @@ const TaskContainer = ({tasks}: Props) => {
 
         <MyButton onClick={() => setFilteredTasks(tasks)}>All</MyButton>
 
-        {tasks.map((task)=> {return( 
-            <MyButton key={task.id} onClick={() => filterTasks(String(task.category))}>
-                {task.category}
+        {categories.map((category)=> {return( 
+            <MyButton key={category} onClick={() => filterTasks(category)}>
+                {category ? category : "Unnamed"}
             </MyButton>
         )})}
       </div>
 
       <div className="flex flex-wrap justify-center">
         <Flex gap="5" wrap="wrap" justify="center">
+
         {filteredTasks.map((task) => {
+
           return (
             <Box key={task.id} height="fit-content" width="450px" >
             <Card className="shadow-sm shadow-slate-900 bg-blue-100 hover:bg-blue-200" size="3" >
               <Box mb="2px" height="25px">{task.name}</Box>
               <Box mb="2px" overflow="auto" height="250px">{task.description}</Box>
-              <Box mb="2px" height="25px">Due: {task.dueDate.toDateString()}</Box>
+              <Box mb="2px" height="25px">Due: {task.dueDate}</Box>
               <Box height="25px">{task.category}</Box>
             </Card>
             <div className="py-1 px-3"><Button variant="outline" ><Link href={`/tasks/${task.id}`}>See Actions</Link></Button></div>
             </Box>
           );
         })}
+        
         </Flex>
       </div>
     </>

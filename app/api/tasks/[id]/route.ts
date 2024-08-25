@@ -27,6 +27,9 @@ export async function PATCH(request: NextRequest, {params}: { params: { id: stri
 
   const body = await request.json();
   
+  if (!body.category) 
+  body.category = null; // remove empty strings
+
   const patchTask = await prisma.task.update({
     where: {
       id: parseInt(params.id),
@@ -34,7 +37,7 @@ export async function PATCH(request: NextRequest, {params}: { params: { id: stri
     data: {
       name: body.name,
       description: body.description,
-      dueDate: new Date(body.dueDate),
+      dueDate: body.dueDate,
       category: body.category
     }
   })

@@ -36,7 +36,7 @@ const DetailedTask = async ({params} : Props) => {
         <Card className="shadow-sm shadow-slate-900 bg-blue-100 hover:bg-blue-200" size="3" >
           <Box mb="2px" height="25px">{task.name}</Box>
           <Box mb="2px" overflow="auto" height="350px">{task.description}</Box>
-          <Box mb="2px" height="25px">Due: {task.dueDate.toDateString()}</Box>
+          <Box mb="2px" height="25px">Due: {task.dueDate}</Box>
           <Box height="25px">{task.category}</Box>
         </Card>
         </Box>

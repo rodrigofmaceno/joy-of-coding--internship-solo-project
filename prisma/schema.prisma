@@ -17,7 +17,7 @@ model Task {
   id          Int      @id @default(autoincrement())
   name        String   
   description String   @db.Text
-  dueDate     DateTime @db.Date
+  dueDate     String   @db.Char(11)
   category    String?   
   createdAt   DateTime @default(now())
   completed   Boolean  @default(false)
